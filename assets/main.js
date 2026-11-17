@@ -19,28 +19,53 @@ const DATA = {
       text: 'Development embedded with companies across industries: APIs, integrations, dashboards and products serving real users at scale.',
       tech: ['Node.js', 'React', 'Angular', 'Spring', 'REST', 'AWS', 'Docker', 'CI/CD'] },
     { when: '2023 — now', year: 2023, title: 'AI-native', glow: 'rgba(255,90,120,.22)',
-      text: 'LLM-powered pipelines, automated media production, mobile games with ad monetisation, and agents that do the boring parts.',
-      tech: ['Python', 'LLMs', 'Claude', 'RAG', 'Agents', 'TTS', 'Flutter', 'AdMob'] },
+      text: 'Agentic flows that automate the daily routine of an existing company, LLM pipelines, automated media production and mobile games.',
+      tech: ['Python', 'LLMs', 'Claude', 'MCP', 'Agents', 'GCP', 'AWS', 'Flutter'] },
   ],
   stack: [
     { name: 'Web', items: ['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Angular', 'PHP', 'Laravel', 'WordPress'] },
     { name: 'Mobile', items: ['Android', 'Kotlin', 'iOS', 'Swift', 'Flutter', 'React Native', 'Ionic', 'Tizen'] },
     { name: 'Backend', items: ['Node.js', 'Java', 'Spring', '.NET', 'C#', 'Python', 'REST', 'GraphQL'] },
-    { name: 'Data & Cloud', items: ['MySQL', 'PostgreSQL', 'MongoDB', 'Firebase', 'Redis', 'AWS', 'Azure', 'Docker'] },
-    { name: 'AI & Automation', items: ['LLMs', 'Claude', 'OpenAI', 'RAG', 'Agents', 'TTS', 'FFmpeg', 'n8n'] },
+    { name: 'Data & Cloud', items: ['MySQL', 'PostgreSQL', 'MongoDB', 'Firebase', 'Redis', 'AWS', 'GCP', 'Docker'] },
+    { name: 'IoT & Hardware', items: ['Sensors', 'Microcontrollers', 'Telemetry', 'OCR', 'Image processing', 'Scanners'] },
+    { name: 'AI & Automation', items: ['LLMs', 'Claude', 'OpenAI', 'MCP', 'Agents', 'RAG', 'TTS', 'Workflows'] },
+  ],
+  lab: [
+    { tag: 'Research', title: 'Phone-to-phone calls. No internet. No SIM.', glyph: 'calls',
+      text: 'R&D into voice calls that travel directly between handsets, with no mobile network, no data plan and no SIM card in the loop.',
+      tech: ['Android', 'Device-to-device', 'Real-time audio', 'Networking'] },
+    { tag: 'Hardware', title: 'Automated cheque scanning machines', glyph: 'cheque',
+      text: 'Software for machines that capture, read and process cheques automatically, turning paper into clean, verified data.',
+      tech: ['Image processing', 'OCR', 'Device drivers', 'Banking workflows'] },
+    { tag: 'Embedded', title: 'Sensor-driven IoT programming', glyph: 'iot',
+      text: 'Programming sensors and connected devices, and the pipelines and dashboards that turn their readings into decisions.',
+      tech: ['Sensors', 'Microcontrollers', 'Telemetry', 'Dashboards'] },
+    { tag: 'Now', title: 'Agentic flows for the daily grind', glyph: 'agents',
+      text: 'AI agents that take over the routine daily workflows of an existing company — reading, deciding, updating systems and reporting back.',
+      tech: ['LLM agents', 'MCP', 'Integrations', 'Workflow automation'] },
+  ],
+  services: [
+    { t: 'Product engineering', d: 'Web and mobile apps, designed, built and shipped end to end.' },
+    { t: 'AI agents & automation', d: 'Agentic flows that take routine operations off people\'s plates.' },
+    { t: 'Cloud management', d: 'Architecture, migration, cost and day-to-day operations on AWS and GCP.' },
+    { t: 'IoT & hardware integration', d: 'Sensors, devices and machines — and the software that makes them useful.' },
+    { t: 'Training & mentoring', d: 'One-to-one and group training for developers and teams.' },
   ],
   domains: [
     { t: 'Education & EdTech', d: 'School websites, exam-prep apps, tutorials and learning portals.', px: '..#...###.#####.#.#..###.', wide: true },
-    { t: 'Finance & Tax', d: 'Tax information apps, invoicing and finance dashboards.', px: '....#...##..###.##########' },
+    { t: 'Banking & Finance', d: 'Cheque scanning automation, tax apps, invoicing and finance dashboards.', px: '....#...##..###.##########' },
     { t: 'Legal', d: 'Portals for advocates: cases, clients and registrations.', px: '..#..#####.#.#...#...###.' },
     { t: 'E-commerce & Retail', d: 'Storefronts, catalogues, carts and payment flows.', px: '.###..#.#.###############' },
     { t: 'Media & Content', d: 'Automated video and podcast pipelines, publishing at daily cadence.', px: '#....###..########..#....', wide: true },
     { t: 'Gaming', d: 'Casual mobile games with ad monetisation.', px: '.#.#.######.#.#######...#' },
     { t: 'Social & Consumer', d: 'Messaging, sharing and privacy utilities for everyday phones.', px: '######.#.######.#...#....' },
-    { t: 'Cloud & SaaS', d: 'Product work alongside cloud consultancies and SaaS teams.', px: '......##..##########.....' },
-    { t: 'Enterprise IT', d: 'Internal tools, integrations and APIs built inside larger companies.', px: '###..#.#..######.#.######', wide: true },
+    { t: 'Telecom', d: 'Device-to-device calling research — no network, no SIM.', px: '..#...#.#.#.#.#..#....#..' },
+    { t: 'Enterprise Operations', d: 'Agentic automation of daily routines, internal tools and integrations inside larger companies.', px: '###..#.#..######.#.######', wide: true },
+    { t: 'IoT & Smart Devices', d: 'Sensor programming, connected devices and real-time telemetry.', px: '#.#.#.###.#####.###.#.#.#', wide: true },
+    { t: 'Cloud & SaaS', d: 'Cloud management on AWS and GCP, and SaaS product work.', px: '......##..##########.....' },
+    { t: 'Corporate Training', d: 'One-to-one and group training programmes.', px: '######...######..#...#.#.' },
   ],
-  shipped: ['Windows 8 Launcher', 'NEET Prep', 'Indian Tax Info', 'Android Tutorial', 'PHP Tutorial', 'Dosti Ka Paigam', 'Gallery Hider', 'Tic Tac Toe', 'Advocate Portal', 'School Websites'],
+  shipped: ['Resonier', 'RacerRadar', 'CorpEngage', 'Windows 8 Launcher', 'NEET Prep', 'Indian Tax Info', 'Android Tutorial', 'PHP Tutorial', 'Dosti Ka Paigam', 'Gallery Hider', 'Tic Tac Toe', 'Advocate Portal', 'School Websites'],
   worked: ['RNV', 'IES', 'Tweak The Future Innovations', 'Digital Cloud Cafe', 'Agile Clouds', 'Bharadia Brothers'],
 };
 
@@ -341,6 +366,43 @@ if (FINE && !RM) {
   });
 }
 
+/* ---------- lab ---------- */
+const GLYPHS = {
+  calls: `<rect x="8" y="20" width="20" height="40" rx="4" class="g-s"/><rect x="92" y="20" width="20" height="40" rx="4" class="g-s"/>
+    ${[0, 1, 2].map(i => `<path d="M${36 + i * 7} ${33 - i * 3} q${6 + i * 2} ${7 + i * 3} 0 ${14 + i * 6}" class="g-s"><animate attributeName="opacity" values="0;1;0" dur="1.5s" begin="${i * 0.25}s" repeatCount="indefinite"/></path>`).join('')}
+    ${[0, 1, 2].map(i => `<path d="M${84 - i * 7} ${33 - i * 3} q-${6 + i * 2} ${7 + i * 3} 0 ${14 + i * 6}" class="g-s"><animate attributeName="opacity" values="0;1;0" dur="1.5s" begin="${0.75 + i * 0.25}s" repeatCount="indefinite"/></path>`).join('')}
+    <line x1="56" y1="66" x2="64" y2="74" class="g-o-s"/><line x1="64" y1="66" x2="56" y2="74" class="g-o-s"/>`,
+  cheque: `<rect x="8" y="16" width="104" height="48" rx="4" class="g-s"/><path d="M18 30h46M18 40h30M76 40h26M18 54h84" class="g-d"/>
+    <rect x="8" y="10" width="3" height="60" class="g-o"><animate attributeName="x" values="8;109;8" dur="2.6s" repeatCount="indefinite"/></rect>`,
+  iot: (() => { const n = [[20, 18], [60, 10], [102, 22], [24, 64], [96, 62]]; return n.map(([x, y]) => `<line x1="60" y1="40" x2="${x}" y2="${y}" class="g-d"/>`).join('') +
+    n.map(([x, y], i) => `<circle cx="${x}" cy="${y}" r="4" class="g-b"><animate attributeName="r" values="3;6;3" dur="1.8s" begin="${i * 0.3}s" repeatCount="indefinite"/></circle>`).join('') +
+    `<rect x="52" y="32" width="16" height="16" rx="3" class="g-o"/>`; })(),
+  agents: `${[8, 47, 86].map((x, i) => `<rect x="${x}" y="26" width="26" height="24" rx="5" class="g-s"><animate attributeName="fill" values="transparent;rgba(255,177,59,.5);transparent" dur="2.4s" begin="${i * 0.8}s" repeatCount="indefinite"/></rect>`).join('')}
+    <path d="M34 38h13M73 38h13" class="g-d"/><path d="M99 52 q0 18 -39 18 q-39 0 -39 -18" class="g-d" stroke-dasharray="3 4"/>
+    <circle r="3" class="g-o"><animateMotion dur="2.4s" repeatCount="indefinite" path="M21 38 H99 q0 32 -39 32 q-39 0 -39 -32"/></circle>`,
+};
+$('#labList').innerHTML = DATA.lab.map((l, i) => `
+  <article class="lab-row rv">
+    <span class="lab-idx">R/${String(i + 1).padStart(2, '0')}</span>
+    <svg class="lab-glyph" viewBox="0 0 120 80" aria-hidden="true">${GLYPHS[l.glyph]}</svg>
+    <div class="lab-main">
+      <span class="lab-tag${l.tag === 'Now' ? ' now' : ''}">${esc(l.tag)}</span>
+      <h3>${esc(l.title)}</h3>
+      <p>${esc(l.text)}</p>
+      <div class="chips">${l.tech.map(x => `<span class="chip">${esc(x)}</span>`).join('')}</div>
+    </div>
+  </article>`).join('');
+if (RM) $$('.lab-glyph').forEach(s => s.pauseAnimations && s.pauseAnimations());
+
+/* ---------- services ---------- */
+$('#svcList').innerHTML = DATA.services.map((s, i) => `
+  <li class="svc rv">
+    <span class="svc-n">${String(i + 1).padStart(2, '0')}</span>
+    <span class="svc-t">${esc(s.t)}</span>
+    <span class="svc-d">${esc(s.d)}</span>
+    <span class="svc-a" aria-hidden="true">→</span>
+  </li>`).join('');
+
 /* ---------- marquees ---------- */
 const mqRow = (arr) => { const h = arr.map(x => `<span>${esc(x)}</span><b></b>`).join(''); return h + h + h; };
 $('#mq1').innerHTML = mqRow(DATA.shipped);
@@ -398,7 +460,7 @@ const io = new IntersectionObserver(es => es.forEach(e => {
   io.unobserve(e.target);
 }), { threshold: 0.15 });
 $$('.section-head, .stat, .term, .contact-title, .mail').forEach(el => { el.classList.add('rv'); io.observe(el); });
-$$('.card, [data-count]').forEach(el => io.observe(el));
+$$('.card, [data-count], .lab-row, .svc').forEach(el => io.observe(el));
 $$('.card').forEach((c, i) => { c.style.transitionDelay = (i % 4) * 0.06 + 's'; });
 
 /* ---------- cursor + magnetic ---------- */
@@ -438,6 +500,7 @@ const term = (() => {
   const cmds = {
     help: () => line([
       ['about', 'who we are'], ['history', 'thirteen years in five lines'], ['stack [ring]', 'technologies, e.g. stack mobile'],
+      ['lab', 'R&D: radios, scanners, sensors, agents'], ['services', 'how we can help'],
       ['domains', 'industries we have worked in'], ['projects', 'things we shipped'], ['contact', 'start a conversation'],
       ['logo', 'draw the mark'], ['believe', 'the motto'], ['clear', 'wipe the screen'],
     ].map(([c, d]) => `<span class="a">${pad(c, 16)}</span>${d}`).join('\n') + `\n<span class="m">tip: ↑/↓ for history, tab to autocomplete. There may be a hidden command or two.</span>`),
@@ -452,6 +515,9 @@ Web · Mobile · Backend · Cloud · AI.`),
       line(cats.map(c => `<span class="a">${pad(c.name, 16)}</span>${c.items.map(esc).join(', ')}`).join('\n'));
       if (cats.length === 1) orbit.select(DATA.stack.indexOf(cats[0]));
     },
+    lab: () => line(DATA.lab.map((l, i) => `<span class="b">R/${String(i + 1).padStart(2, '0')}</span>  <span class="a">${pad('[' + l.tag + ']', 11)}</span>${esc(l.title)}`).join('\n')),
+    services: () => line(DATA.services.map(s => `<span class="a">${pad(s.t, 28)}</span>${esc(s.d)}`).join('\n')),
+    training: () => line('One-to-one and group training sessions. Type <span class="a">contact</span> to set one up.'),
     domains: () => line(DATA.domains.map((d, i) => `<span class="b">${String(i + 1).padStart(2, '0')}</span>  ${esc(d.t)}`).join('\n')),
     projects: () => line(DATA.shipped.map(p => `  ▪ ${esc(p)}`).join('\n') + `\n<span class="m">…plus a lot of work under other companies' names.</span>`),
     contact: () => line(`email  → <a href="mailto:${DATA.email}">${DATA.email}</a>\nweb    → achieverstechnology.com`),
