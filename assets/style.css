@@ -168,17 +168,6 @@ section{position:relative}
 .lab-row p{color:var(--mute);max-width:640px;font-size:16px}
 .lab-row .chips{padding-top:18px}
 
-/* services */
-.services{padding:120px 0}
-.svc-list{list-style:none;margin-top:56px;border-top:1px solid var(--line)}
-.svc{display:grid;grid-template-columns:70px minmax(0,1.3fr) minmax(0,1fr) 40px;gap:24px;align-items:center;padding:28px var(--gutter);border-bottom:1px solid var(--line)}
-.svc-n{font-family:var(--mono);font-size:13px;color:var(--dim)}
-.svc-t{font-size:clamp(28px,4vw,60px);letter-spacing:-.045em;line-height:1;font-weight:700;transition:color .3s,transform .4s cubic-bezier(.2,.9,.1,1)}
-.svc-d{color:var(--mute);font-size:16px}
-.svc-a{font-size:28px;color:var(--orange);opacity:0;transform:translateX(-12px);transition:opacity .3s,transform .3s}
-.svc:hover .svc-t{color:var(--orange);transform:translateX(14px);font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.02em}
-.svc:hover .svc-a{opacity:1;transform:none}
-
 /* domains */
 .domains{padding:120px 0}
 .bento{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:0 var(--gutter);margin-top:56px}
@@ -255,9 +244,6 @@ section{position:relative}
   .stats{grid-template-columns:repeat(2,1fr)}
   .lab-row{grid-template-columns:130px minmax(0,1fr);gap:28px}
   .lab-idx{display:none}
-  .svc{grid-template-columns:50px minmax(0,1fr)}
-  .svc-d{grid-column:2}
-  .svc-a{display:none}
 }
 @media (max-width:760px){
   .hero{padding-bottom:110px}
@@ -278,9 +264,6 @@ section{position:relative}
   .planet{font-size:10px;padding:3px 8px}
   .lab-row{grid-template-columns:1fr;gap:16px;padding-top:36px;padding-bottom:36px}
   .lab-glyph{width:150px}
-  .svc{grid-template-columns:1fr;gap:8px}
-  .svc-n{display:none}
-  .svc-d{grid-column:auto}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}

@@ -44,13 +44,6 @@ const DATA = {
       text: 'AI agents that take over the routine daily workflows of an existing company — reading, deciding, updating systems and reporting back.',
       tech: ['LLM agents', 'MCP', 'Integrations', 'Workflow automation'] },
   ],
-  services: [
-    { t: 'Product engineering', d: 'Web and mobile apps, designed, built and shipped end to end.' },
-    { t: 'AI agents & automation', d: 'Agentic flows that take routine operations off people\'s plates.' },
-    { t: 'Cloud management', d: 'Architecture, migration, cost and day-to-day operations on AWS and GCP.' },
-    { t: 'IoT & hardware integration', d: 'Sensors, devices and machines — and the software that makes them useful.' },
-    { t: 'Training & mentoring', d: 'One-to-one and group training for developers and teams.' },
-  ],
   domains: [
     { t: 'Education & EdTech', d: 'School websites, exam-prep apps, tutorials and learning portals.', px: '..#...###.#####.#.#..###.', wide: true },
     { t: 'Banking & Finance', d: 'Cheque scanning automation, tax apps, invoicing and finance dashboards.', px: '....#...##..###.##########' },
@@ -394,15 +387,6 @@ $('#labList').innerHTML = DATA.lab.map((l, i) => `
   </article>`).join('');
 if (RM) $$('.lab-glyph').forEach(s => s.pauseAnimations && s.pauseAnimations());
 
-/* ---------- services ---------- */
-$('#svcList').innerHTML = DATA.services.map((s, i) => `
-  <li class="svc rv">
-    <span class="svc-n">${String(i + 1).padStart(2, '0')}</span>
-    <span class="svc-t">${esc(s.t)}</span>
-    <span class="svc-d">${esc(s.d)}</span>
-    <span class="svc-a" aria-hidden="true">→</span>
-  </li>`).join('');
-
 /* ---------- marquees ---------- */
 const mqRow = (arr) => { const h = arr.map(x => `<span>${esc(x)}</span><b></b>`).join(''); return h + h + h; };
 $('#mq1').innerHTML = mqRow(DATA.shipped);
@@ -460,7 +444,7 @@ const io = new IntersectionObserver(es => es.forEach(e => {
   io.unobserve(e.target);
 }), { threshold: 0.15 });
 $$('.section-head, .stat, .term, .contact-title, .mail').forEach(el => { el.classList.add('rv'); io.observe(el); });
-$$('.card, [data-count], .lab-row, .svc').forEach(el => io.observe(el));
+$$('.card, [data-count], .lab-row').forEach(el => io.observe(el));
 $$('.card').forEach((c, i) => { c.style.transitionDelay = (i % 4) * 0.06 + 's'; });
 
 /* ---------- cursor + magnetic ---------- */
@@ -500,7 +484,7 @@ const term = (() => {
   const cmds = {
     help: () => line([
       ['about', 'who we are'], ['history', 'thirteen years in five lines'], ['stack [ring]', 'technologies, e.g. stack mobile'],
-      ['lab', 'R&D: radios, scanners, sensors, agents'], ['services', 'how we can help'],
+      ['lab', 'R&D: radios, scanners, sensors, agents'],
       ['domains', 'industries we have worked in'], ['projects', 'things we shipped'], ['contact', 'start a conversation'],
       ['logo', 'draw the mark'], ['believe', 'the motto'], ['clear', 'wipe the screen'],
     ].map(([c, d]) => `<span class="a">${pad(c, 16)}</span>${d}`).join('\n') + `\n<span class="m">tip: ↑/↓ for history, tab to autocomplete. There may be a hidden command or two.</span>`),
@@ -516,7 +500,6 @@ Web · Mobile · Backend · Cloud · AI.`),
       if (cats.length === 1) orbit.select(DATA.stack.indexOf(cats[0]));
     },
     lab: () => line(DATA.lab.map((l, i) => `<span class="b">R/${String(i + 1).padStart(2, '0')}</span>  <span class="a">${pad('[' + l.tag + ']', 11)}</span>${esc(l.title)}`).join('\n')),
-    services: () => line(DATA.services.map(s => `<span class="a">${pad(s.t, 28)}</span>${esc(s.d)}`).join('\n')),
     training: () => line('One-to-one and group training sessions. Type <span class="a">contact</span> to set one up.'),
     domains: () => line(DATA.domains.map((d, i) => `<span class="b">${String(i + 1).padStart(2, '0')}</span>  ${esc(d.t)}`).join('\n')),
     projects: () => line(DATA.shipped.map(p => `  ▪ ${esc(p)}`).join('\n') + `\n<span class="m">…plus a lot of work under other companies' names.</span>`),
