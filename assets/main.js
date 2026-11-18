@@ -45,6 +45,19 @@ const DATA = {
       text: 'AI agents that take over the routine daily workflows of an existing company — reading, deciding, updating systems and reporting back.',
       tech: ['LLM agents', 'MCP', 'Integrations', 'Workflow automation'] },
   ],
+  training: {
+    offers: [
+      { tag: 'For teams', title: 'Corporate training',
+        text: 'Workshops and multi-week programmes for engineering teams, on-site or live online, built around your stack and your codebase.',
+        points: ['Group workshops & bootcamps', 'Curriculum tailored to your stack', 'On-site or live online', 'Hands-on labs on real problems'],
+        cta: 'Plan a team workshop', msg: "Hi Achievers Technology, I'd like to discuss corporate training for my team." },
+      { tag: 'For you', title: 'One-to-one training',
+        text: 'Personal mentoring for developers, students and career-switchers, at your pace, on the skills you actually need.',
+        points: ['Live 1:1 sessions', 'Project-based learning', 'Code reviews & career guidance', 'Flexible schedule'],
+        cta: 'Book a 1:1 session', msg: "Hi Achievers Technology, I'm interested in one-to-one training." },
+    ],
+    tracks: ['AI agents & automation', 'Cloud on AWS & GCP', 'Full-stack web development', 'Mobile app development', 'IoT & sensor programming', 'Engineering practices & Git'],
+  },
   domains: [
     { t: 'Education & EdTech', d: 'School websites, exam-prep apps, tutorials and learning portals.', px: '..#...###.#####.#.#..###.', wide: true },
     { t: 'Banking & Finance', d: 'Cheque scanning automation, tax apps, invoicing and finance dashboards.', px: '....#...##..###.##########' },
@@ -388,6 +401,18 @@ $('#labList').innerHTML = DATA.lab.map((l, i) => `
   </article>`).join('');
 if (RM) $$('.lab-glyph').forEach(s => s.pauseAnimations && s.pauseAnimations());
 
+/* ---------- training ---------- */
+const waLink = msg => 'https://wa.me/919890127883?text=' + encodeURIComponent(msg);
+$('#trGrid').innerHTML = DATA.training.offers.map((o, i) => `
+  <article class="tr-card rv${i ? ' alt' : ''}">
+    <span class="tr-tag">${esc(o.tag)}</span>
+    <h3>${esc(o.title)}</h3>
+    <p>${esc(o.text)}</p>
+    <ul class="tr-points">${o.points.map(p => `<li>${esc(p)}</li>`).join('')}</ul>
+    <a class="btn ${i ? 'btn-ghost' : 'btn-solid'} magnetic tr-cta" href="${waLink(o.msg)}" target="_blank" rel="noopener">${esc(o.cta)} <span aria-hidden="true">→</span></a>
+  </article>`).join('');
+$('#trTracks').innerHTML = DATA.training.tracks.map(t => `<li>${esc(t)}</li>`).join('');
+
 /* ---------- marquees ---------- */
 const mqRow = (arr) => { const h = arr.map(x => `<span>${esc(x)}</span><b></b>`).join(''); return h + h + h; };
 $('#mq1').innerHTML = mqRow(DATA.shipped);
@@ -448,7 +473,7 @@ const io = new IntersectionObserver(es => es.forEach(e => {
   io.unobserve(e.target);
 }), { threshold: 0.15 });
 $$('.section-head, .stat, .term, .contact-title, .mail').forEach(el => { el.classList.add('rv'); io.observe(el); });
-$$('.card, [data-count], .lab-row').forEach(el => io.observe(el));
+$$('.card, [data-count], .lab-row, .tr-card').forEach(el => io.observe(el));
 $$('.card').forEach((c, i) => { c.style.transitionDelay = (i % 4) * 0.06 + 's'; });
 
 /* ---------- cursor + magnetic ---------- */
@@ -488,7 +513,7 @@ const term = (() => {
   const cmds = {
     help: () => line([
       ['about', 'who we are'], ['history', 'thirteen years in five lines'], ['stack [ring]', 'technologies, e.g. stack mobile'],
-      ['lab', 'R&D: radios, scanners, sensors, agents'],
+      ['lab', 'R&D: radios, scanners, sensors, agents'], ['training', 'corporate & one-to-one training'],
       ['domains', 'industries we have worked in'], ['projects', 'things we shipped'], ['contact', 'start a conversation'],
       ['logo', 'draw the mark'], ['believe', 'the motto'], ['clear', 'wipe the screen'],
     ].map(([c, d]) => `<span class="a">${pad(c, 16)}</span>${d}`).join('\n') + `\n<span class="m">tip: ↑/↓ for history, tab to autocomplete. There may be a hidden command or two.</span>`),
@@ -504,7 +529,7 @@ Web · Mobile · Backend · Cloud · AI.`),
       if (cats.length === 1) orbit.select(DATA.stack.indexOf(cats[0]));
     },
     lab: () => line(DATA.lab.map((l, i) => `<span class="b">R/${String(i + 1).padStart(2, '0')}</span>  <span class="a">${pad('[' + l.tag + ']', 11)}</span>${esc(l.title)}`).join('\n')),
-    training: () => line('One-to-one and group training sessions. Type <span class="a">contact</span> to set one up.'),
+    training: () => line(DATA.training.offers.map(o => `<span class="a">${pad(o.title, 22)}</span>${esc(o.text)}`).join('\n') + `\n\n<span class="b">tracks</span>  ${DATA.training.tracks.map(esc).join(' · ')}\n<span class="m">type</span> <span class="a">contact</span> <span class="m">to book one.</span>`),
     domains: () => line(DATA.domains.map((d, i) => `<span class="b">${String(i + 1).padStart(2, '0')}</span>  ${esc(d.t)}`).join('\n')),
     projects: () => line(DATA.shipped.map(p => `  ▪ ${esc(p)}`).join('\n') + `\n<span class="m">…plus a lot of work under other companies' names.</span>`),
     contact: () => line(`email    → <a href="mailto:${DATA.email}">${DATA.email}</a>\nwhatsapp → <a href="${DATA.whatsapp}" target="_blank" rel="noopener">+91 98901 27883</a>\nweb      → achieverstechnology.com`),
