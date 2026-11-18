@@ -225,6 +225,16 @@ section{position:relative}
 .mail-arrow{transition:transform .3s}
 .mail:hover .mail-arrow{transform:translateX(6px) rotate(-45deg)}
 
+/* whatsapp */
+.wa-inline{margin-top:16px;display:inline-flex;align-self:flex-start;align-items:center;gap:12px;padding:16px 24px;border-radius:999px;background:#25d366;color:#04140a;font-weight:500;font-size:clamp(15px,1.6vw,19px);transition:background .3s,color .3s}
+.wa-inline:hover{background:var(--ink);color:#000}
+.wa-inline svg,.wa-float svg{width:22px;height:22px;fill:currentColor;flex:none}
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:95;display:flex;align-items:center;gap:10px;height:54px;padding:0 16px;border-radius:999px;background:#25d366;color:#04140a;font-weight:500;font-size:14px;box-shadow:0 12px 40px -10px rgba(37,211,102,.6);opacity:0;transform:translateY(20px) scale(.9);pointer-events:none;transition:opacity .4s,transform .4s cubic-bezier(.2,.9,.1,1)}
+.wa-float.show{opacity:1;transform:none;pointer-events:auto}
+.wa-float svg{width:26px;height:26px}
+.wa-float:hover{background:var(--ink)}
+@media (max-width:760px){.wa-float{padding:0;width:54px;justify-content:center}.wa-label{display:none}}
+
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding:28px var(--gutter);border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--dim)}
 .foot-tag{color:var(--orange)}
 

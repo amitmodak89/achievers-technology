@@ -5,6 +5,7 @@
 
 const DATA = {
   email: 'support@achieverstechnology.com',
+  whatsapp: 'https://wa.me/919890127883?text=' + encodeURIComponent("Hi Achievers Technology, I'd like to discuss a project."),
   eras: [
     { when: 'Oct 2013', year: 2013, title: 'The first commit', glow: 'rgba(45,156,255,.28)',
       text: 'A one-laptop studio building websites for schools, classes and local businesses. Hand-written HTML5, PHP and every CMS worth knowing.',
@@ -407,11 +408,14 @@ function mqFrame() {
 if (!RM) requestAnimationFrame(mqFrame);
 
 /* ---------- scroll driver ---------- */
+const waFloat = $('#waFloat');
 const navLinks = $$('.nav nav a');
 const sections = navLinks.map(a => $(a.getAttribute('href')));
 function onScroll() {
   const vh = innerHeight, y = scrollY;
   field.setScatter(clamp(y / (vh * 0.85)));
+  const nearEnd = y + vh > document.documentElement.scrollHeight - vh * 0.9;
+  waFloat.classList.toggle('show', y > vh * 0.7 && !nearEnd);
 
   const mr = manifesto.getBoundingClientRect();
   const mp = clamp((vh * 0.85 - mr.top) / (mr.height + vh * 0.25));
@@ -503,7 +507,8 @@ Web · Mobile · Backend · Cloud · AI.`),
     training: () => line('One-to-one and group training sessions. Type <span class="a">contact</span> to set one up.'),
     domains: () => line(DATA.domains.map((d, i) => `<span class="b">${String(i + 1).padStart(2, '0')}</span>  ${esc(d.t)}`).join('\n')),
     projects: () => line(DATA.shipped.map(p => `  ▪ ${esc(p)}`).join('\n') + `\n<span class="m">…plus a lot of work under other companies' names.</span>`),
-    contact: () => line(`email  → <a href="mailto:${DATA.email}">${DATA.email}</a>\nweb    → achieverstechnology.com`),
+    contact: () => line(`email    → <a href="mailto:${DATA.email}">${DATA.email}</a>\nwhatsapp → <a href="${DATA.whatsapp}" target="_blank" rel="noopener">+91 98901 27883</a>\nweb      → achieverstechnology.com`),
+    whatsapp: () => { line('opening WhatsApp…'); window.open(DATA.whatsapp, '_blank', 'noopener'); },
     hire: () => cmds.contact(),
     logo: () => line(LOGO),
     believe: () => line(`<span class="a">Believe it.</span> <span class="b">Achieve it.</span>  — since 2013`),
