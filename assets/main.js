@@ -234,7 +234,7 @@ const field = (() => {
       if (RM) { pts.forEach(p => { p.x = p.tx; p.y = p.ty; }); frame(); }
       else requestAnimationFrame(frame);
     };
-    img.src = 'assets/logo-2013.png';
+    img.src = 'assets/logo.png?v=2';
     addEventListener('resize', () => { layout(); if (RM) { pts.forEach(p => { p.x = p.tx; p.y = p.ty; }); frame(); } });
     const hero = cv.parentElement;
     hero.addEventListener('pointermove', e => { const r = cv.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; });
